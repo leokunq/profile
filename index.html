@@ -102,9 +102,13 @@
             else—whether it's areas I should improve, random thoughts, or even
             your phone number. I don't mind at all.
           </p>
-          <form class="contact-form" id="contact-form">
+          <form
+            novalidate
+            autocomplete="off"
+            class="contact-form"
+            id="contact-form"
+          >
             <input id="name" type="text" placeholder="Your Name" required />
-            <input id="email" type="email" placeholder="Your Email" required />
             <textarea
               id="message"
               placeholder="Your Message"
