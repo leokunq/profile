@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" type="image/png" href="../resources/icon.png" />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "4CqUNWjX4Ou0O4SYm",
+        });
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Schoolbell&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <title>Portfolio</title>
+  </head>
+  <body id="">
+    <header id="home">
+      <h1 class="name" href="#">Sarv.</h1>
+      <nav class="nav">
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+      </nav>
+      <section class="intro">
+        <h4 class="jap">レオクンク!</h4>
+        <h2>Hi!, I'm leokunq</h2>
+        <h5>
+          I build beautiful, thoughful and meaningful digital experiences.
+        </h5>
+        <p>
+          A creative frontend developer and visual storyteller inspired by
+          nature, animals, everyday magic and little bit of Ghibli style.
+        </p>
+        <div class="actions">
+          <a href="#about"
+            ><button class="work">
+              <i class="ri-leaf-fill"></i>About Me...!
+            </button></a
+          >
+        </div>
+      </section>
+    </header>
+    <main>
+      <section class="work">
+        <div class="projects" id="projects">
+          <h4><i class="ri-leaf-line"></i>Featured Projects...</h4>
+          <div class="pr">
+            <article class="project-card1">
+              <a href="https://leokunq.github.io/AniTrail./" target="_blank">
+                <img src="../resources/Anitrail..png" alt="project1" />
+                <h6>AniTrail.</h6>
+                <p>
+                  A simple web application for enjoying and sharing anime
+                  content.
+                </p>
+                <p id="tech">HTML + CSS</p>
+              </a>
+            </article>
+            <article class="project-card2" id="img">
+              <img src="" />
+            </article>
+            <article class="project-card3" id="img">
+              <img src="" />
+            </article>
+            <article class="project-card4" id="img">
+              <img src="" />
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="about" id="about">
+        <h4><i class="ri-leaf-line"></i>About Me...</h4>
+        <p>
+          So, I'm not really a frontend developer. For me, coding is nothing
+          more than a challenge to improve myself—and maybe brag about it to my
+          friends. I'm just a not-so-normal guy who enjoys doing many different
+          things instead of mastering just one. Most of what I know comes from
+          self-learning, experimenting, and slowly developing my own style.
+        </p>
+      </section>
+      <section class="contact" id="contact">
+        <h4><i class="ri-leaf-line"></i>Contact Me...</h4>
+        <div class="contact-info">
+          <p>
+            Feel free to share your feedback, suggestions, or anything
+            else—whether it's areas I should improve, random thoughts, or even
+            your phone number. I don't mind at all.
+          </p>
+          <form class="contact-form" id="contact-form">
+            <input id="name" type="text" placeholder="Your Name" required />
+            <input id="email" type="email" placeholder="Your Email" required />
+            <textarea
+              id="message"
+              placeholder="Your Message"
+              required
+            ></textarea>
+            <button type="submit">
+              <i class="ri-leaf-fill"></i> Send Message
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <script src="cv.js"></script>
+  </body>
+</html>
