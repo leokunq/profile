@@ -219,7 +219,7 @@ body.dark-mode {
 
   /* Images */
   --header-image: url("/resources/night_scene.png");
-  --project-image: url(/resources/night_coming_soon.png);
+  --project-image: url("/resources/night_coming_soon.png");
 }
 
 /* introduction */
