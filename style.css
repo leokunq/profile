@@ -39,8 +39,8 @@
   --shadow-soft: 0 4px 10px hsla(0, 3%, 16%, 0.08);
 
   /* Images */
-  --header-image: url("/resources/day_scene.png");
-  --project-image: url("/resources/coming_soon.png");
+  --header-image: url("./resources/day_scene.png");
+  --project-image: url("./resources/coming_soon.png");
 }
 
 html {
@@ -218,8 +218,8 @@ body.dark-mode {
   --shadow-soft: 0 4px 10px hsla(0, 3%, 16%, 0.08);
 
   /* Images */
-  --header-image: url("/resources/night_scene.png");
-  --project-image: url("/resources/night_coming_soon.png");
+  --header-image: url("./resources/night_scene.png");
+  --project-image: url("./resources/night_coming_soon.png");
 }
 
 /* introduction */
