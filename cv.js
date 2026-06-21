@@ -1,6 +1,5 @@
-const nickname = ["leo.", "037.", "intj.", "affi.", "A Guy.", "Sarv."];
-const title = document.querySelector(".name");
-const form = document.getElementById("contact-form");
+const form = document.querySelector(".contact-form");
+const email = document.getElementById("email");
 
 form.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -10,6 +9,19 @@ form.addEventListener("submit", function (event) {
     email: document.getElementById("email").value,
     message: document.getElementById("message").value,
   };
+
+  const error = document.getElementById("error");
+
+  error.textContent = "";
+
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+  let emailAns = emailRegex.test(email.value);
+
+  if (!emailAns) {
+    error.textContent = "You sure Your emial is correct?";
+    return;
+  }
 
   emailjs
     .send("leokunq", "template_mtz9p2e", params)
@@ -21,6 +33,10 @@ form.addEventListener("submit", function (event) {
       alert("Failed to send message.");
     });
 });
+
+const nickname = ["leo.", "037.", "intj.", "affi.", "A Guy.", "Sarv."];
+const title = document.querySelector(".name");
+
 document.body.classList.toggle(
   "dark-mode",
   localStorage.getItem("theme") === "dark",
