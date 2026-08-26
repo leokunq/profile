@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/png" href="Kunq Café/robo/robo.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <title>Kunq Café</title>
+  </head>
+  <body>
+
+    <audio id="bg-music">
+      <source src="bg music/cozy-relax-jazz-coffee.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="click-sound">
+      <source src="click sound/skip-click.wav" type="audio/mpeg">
+    </audio>
+
+    <div class="screen-warning">
+      <p>
+        ROBO: 
+        "Uhh... it's getting a little cramped in here.".... 
+        Please use a screen width of 1200px or wider.
+      </p>
+    </div>
+
+    <div class="content">
+      <div class="roboImage">
+        <img id="roboImage" src="robo/robo.png" alt="Robo_Image" />
+      </div>
+
+      <div id="dialogBox" class="dialog">
+        <h2 id="robo">Robo:</h2>
+        <p id="roboDialog"></p>
+
+        <div class="hourglass" id="hourglass">
+          <i class="ri-hourglass-2-fill"></i>
+        </div>
+
+        <input type="text" id="userInput" />
+        <button class="clickBtn" id="clickBtn">
+          <i class="ri-arrow-down-double-fill"></i>
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
