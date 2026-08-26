@@ -1,0 +1,188 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+:root {
+  /* background-color */
+  --background-color: #f6f1e9;
+  --secondary-color: #eadbc8;
+
+  /* text colors */
+  --user-input: #dbc6a6;
+  --robo-output: #6b4f3b;
+
+  /* button color */
+  --button-color: #383534;
+
+  /* padding & border */
+  --small-padding: 1rem;
+  --medium-padding: 1.5rem;
+
+  --border-radius: 10px;
+}
+
+html,
+body {
+  margin: 0;
+  min-width: 1200px;
+  min-height: 100vh;
+  background-color: #383534;
+}
+
+.content {
+  min-width: 1200px;
+  min-height: 100vh;
+
+  background-image: url(bg-image/robo_cafe.png);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: max(100vw, 1200px) auto;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#roboImage {
+  height: 18rem;
+  position: fixed;
+  bottom: 15rem;
+  left: 1rem;
+  right: 1rem;
+}
+
+#robo {
+  color: var(--robo-output);
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+#roboDialog {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--robo-output);
+}
+
+#userInput {
+  padding: var(--small-padding);
+  border-radius: var(--border-radius);
+  border: none;
+
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+
+  font-size: 1.5rem;
+  font-family: initial;
+  color: var(--robo-output);
+
+  outline: none;
+
+  height: 10vh;
+  width: 100%;
+}
+
+.clickBtn {
+  padding: 0 var(--small-padding);
+
+  display: flex;
+
+  margin: auto;
+  justify-content: end;
+
+  font-size: 2rem;
+  border: none;
+
+  animation: floatUpDown 2s ease-in-out infinite;
+
+  background-color: transparent;
+  color: var(--button-color);
+  cursor: pointer;
+}
+
+@keyframes floatUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.dialog {
+  position: fixed;
+  bottom: 0.5rem;
+  left: 1rem;
+  right: 1rem;
+
+  padding: 1rem;
+  border-radius: 20px;
+
+  background-color: var(--user-input);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.hourglass {
+  position: absolute;
+  display: none;
+  font-size: 3rem;
+  margin-top: 7rem;
+  margin-bottom: 1rem;
+  color: var(--button-color);
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.screen-warning {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.screen-warning p {
+  padding: 2rem;
+  border-radius: 20px;
+  background: var(--secondary-color);
+  color: var(--robo-output);
+
+  font-size: 1.5rem;
+}
+
+@media (max-width: 1200px) {
+  .screen-warning {
+    display: flex;
+    font-size: 2rem;
+  }
+
+  .content {
+    display: none;
+  }
+}
