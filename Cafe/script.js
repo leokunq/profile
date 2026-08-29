@@ -87,7 +87,6 @@ setTimeout(() => {
   clickBtn.style.display = "block";
 }, 2000);
 
-
 function userInputHidden() {
   userInput.disabled = true;
   userInput.style.backgroundColor = "transparent";
@@ -104,7 +103,6 @@ function userInputSpace() {
 }
 
 clickBtn.addEventListener("click", () => {
-
   clickSnd.play();
   clickSnd.volume = 0.3;
 
@@ -130,13 +128,30 @@ clickBtn.addEventListener("click", () => {
     userInput.value = "";
     stage = 0;
   } else if (stage === 2) {
-    quantity = Number(userInput.value);
-    userInput.value = "";
+    rndm = Math.floor(Math.random() * 500 + 1);
 
-    userInputHidden();
-    roboDialog.textContent = `Your ordered ${quantity} ${orderedItem}...`;
+    if (userInput.value.trim() === "") {
+      roboDialog.textContent = `So, you want ${rndm} of them?...give me a number.`;
 
-    stage = 3;
+      userInputHidden();
+      userInput.value = "";
+      stage = 0;
+    } else if (isNaN(Number(userInput.value))) {
+      roboDialog.textContent = "Mind using a number...like: 1, 2, 5....yeah?";
+
+      userInputHidden();
+      userInput.value = "";
+      stage = 0;
+    } else {
+      quantity = Number(userInput.value);
+
+      userInput.value = "";
+      userInputHidden();
+
+      roboDialog.textContent = `You ordered ${quantity} ${orderedItem}...`;
+
+      stage = 3;
+    }
   } else if (stage === 3) {
     roboDialog.textContent = "Before i prepapre it...";
     stage = 4;
