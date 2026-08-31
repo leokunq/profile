@@ -1,4 +1,5 @@
 const robo = document.getElementById("robo");
+let bgImage = document.getElementById("content");
 const clickSnd = document.getElementById("click-sound");
 const roboDialog = document.getElementById("roboDialog");
 const hourGlass = document.getElementById("hourglass");
@@ -73,7 +74,7 @@ function getTime() {
   } else if (hours >= 18 && hours < 23) {
     return "Evening...!";
   } else {
-    roboDialog.textContent = "Wow!...late One...";
+    return "Wow!...late One...";
   }
 }
 
@@ -161,25 +162,33 @@ clickBtn.addEventListener("click", () => {
     userInput.style.display = "initial";
     stage = 5;
   } else if (stage === 5) {
-    userName = String(userInput.value).toLowerCase().trim();
-    userInput.value = "";
-    userInputHidden();
+    if (userInput.value.trim() === "") {
+      roboDialog.textContent = `So, you dont like the name your parents gave you???...gimme something...even
+      a single character.`;
+      userInputHidden();
+      userInput.value = "";
+      stage = 4;
+    } else {
+      userName = String(userInput.value).toLowerCase().trim();
+      userInput.value = "";
+      userInputHidden();
 
-    const coffee = menu.find((item) => item.name === orderedItem);
+      const coffee = menu.find((item) => item.name === orderedItem);
 
-    roboDialog.textContent = `Great ${userName}..We'll have ${orderedItem} ready in few seconds...`;
+      roboDialog.textContent = `Great ${userName}..We'll have ${orderedItem} ready in few seconds...`;
 
-    hourGlass.style.display = "inline";
-    clickBtn.disabled = true;
+      hourGlass.style.display = "inline";
+      clickBtn.disabled = true;
 
-    setTimeout(() => {
-      hourGlass.style.display = "none";
-      roboDialog.textContent = `Here you go ${userName}..Your ${orderedItem} and your total will be  $${quantity * coffee.price}`;
-      stage = 0;
+      setTimeout(() => {
+        hourGlass.style.display = "none";
+        roboDialog.textContent = `Here you go ${userName}..Your ${orderedItem} and your total will be  $${quantity * coffee.price}`;
+        stage = 0;
 
-      clickBtn.disabled = false;
-    }, 5000);
+        clickBtn.disabled = false;
+      }, 5000);
 
-    userInput.value = "";
+      userInput.value = "";
+    }
   }
 });
